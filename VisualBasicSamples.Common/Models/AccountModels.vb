@@ -19,9 +19,9 @@
 
 Imports System
 Imports System.Collections.Generic
-Namespace VisualBasicSamples.Account.Models
-    
-    Public Enum AccountTypes
+Namespace VisualBasicSamples.Common.Models
+
+    Public Enum Classifications
         Unknown = 0
         Asset = 1
         Liability = 2
@@ -33,7 +33,7 @@ Namespace VisualBasicSamples.Account.Models
         OtherExpense = 8
     End Enum
 
-    Public Enum SubTypes
+    Public Enum AccountTypes
         Bank = 1
         AccountReceivable = 2
         OtherCurrentAsset = 3
@@ -52,6 +52,20 @@ Namespace VisualBasicSamples.Account.Models
         OtherExpense = 16
     End Enum
 
+
+    Public Class AccountLink
+        Public Property UID() As String
+        Public Property Name() As String
+        Public Property DisplayID() As String
+        Public Property URI() As String
+    End Class
+
+    Public Class TaxCodeLink
+        Public Property UID() As String
+        Public Property Code() As String
+        Public Property URI() As String
+    End Class
+
     Public Class BankDetailsModel
         Public Property BankAccountNumber() As String
         Public Property BankAccountName() As String
@@ -68,25 +82,25 @@ Namespace VisualBasicSamples.Account.Models
     Public Class AccountModel
         Public ReadOnly Property IsNew() As Boolean
             Get
-                Return String.IsNullOrEmpty(Id)
+                Return String.IsNullOrEmpty(UID)
             End Get
         End Property
-        Public Property Id() As String
-        Public Property AccountName() As String
-        Public Property AccountType() As AccountTypes
-        Public Property AccountNumber() As Integer
-        Public Property AccountDescription() As String
-        Public Property ParentAccountId() As String
-        Public Property ParentAccountUri() As String
-        Public Property IsInactive() As Boolean
-        Public Property TaxCodeId() As String
-        Public Property AccountLevel() As Integer
-        Public Property SubType() As SubTypes
+        Public Property UID() As String
+        Public Property Name() As String
+        Public Property DisplayID() As String
+        Public Property Classification() As Classifications
+        Public Property Type() As AccountTypes
+        Public Property Number() As Integer
+        Public Property Description() As String
+        Public Property ParentAccount() As AccountLink
+        Public Property IsActive() As Boolean
+        Public Property TaxCode() As TaxCodeLink
+        Public Property Level() As Integer
         Public Property OpeningAccountBalance() As Decimal
         Public Property CurrentAccountBalance() As Decimal
         Public Property BankingDetails() As BankDetailsModel
         Public Property IsHeader() As Boolean
-        Public Property Uri() As String
+        Public Property URI() As String
         Public Property RowVersion() As String
     End Class
 End Namespace

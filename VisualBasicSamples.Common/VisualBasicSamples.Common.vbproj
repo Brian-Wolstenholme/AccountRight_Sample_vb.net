@@ -60,10 +60,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CompanyFileContext.vb" />
+    <Compile Include="Controllers\AccountController.vb" />
     <Compile Include="Controllers\Base\BusinessController.vb" />
     <Compile Include="Controllers\Base\ControllerBase.vb" />
-    <Compile Include="Controllers\Base\OAuthInfo.vb" />
-    <Compile Include="Controllers\Base\OAuthToken.vb" />
+    <Compile Include="OAuth\OAuthInfo.vb" />
+    <Compile Include="OAuth\OAuthToken.vb" />
     <Compile Include="Forms\CompanyFileList.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -76,14 +77,15 @@
     <Compile Include="Forms\CompanyLogonForm.Designer.vb">
       <DependentUpon>CompanyLogonForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\OAuthSetting.vb">
+    <Compile Include="OAuth\OAuthSetting.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\OAuthSetting.Designer.vb">
+    <Compile Include="OAuth\OAuthSetting.Designer.vb">
       <DependentUpon>OAuthSetting.vb</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\OAuthServiceHelper.vb" />
+    <Compile Include="OAuth\OAuthServiceHelper.vb" />
     <Compile Include="Helpers\StringHelper.vb" />
+    <Compile Include="Models\AccountModels.vb" />
     <Compile Include="Models\CompanyModels.vb" />
     <Compile Include="Controllers\LibraryBrowserController.vb" />
     <Compile Include="Models\PageItems.vb" />
@@ -98,7 +100,7 @@
     <EmbeddedResource Include="Forms\CompanyLogonForm.resx">
       <DependentUpon>CompanyLogonForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OAuthSetting.resx">
+    <EmbeddedResource Include="OAuth\OAuthSetting.resx">
       <DependentUpon>OAuthSetting.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>

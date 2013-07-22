@@ -42,14 +42,12 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\AccountController.vb" />
     <Compile Include="Forms\AccountList.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\AccountList.Designer.vb">
       <DependentUpon>AccountList.vb</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountModels.vb" />
     <Compile Include="Program.vb" />
     <Compile Include="Properties\AssemblyInfo.vb" />
     <EmbeddedResource Include="Forms\AccountList.resx">

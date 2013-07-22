@@ -22,8 +22,8 @@ Imports System.Collections.Generic
 Imports System.Linq
 Imports System.Windows.Forms
 Imports VisualBasicSamples.Common.Forms
-Imports VisualBasicSamples.Account.Controllers
-Imports VisualBasicSamples.Account.Models
+Imports VisualBasicSamples.Common.Controllers
+Imports VisualBasicSamples.Common.Models
 
 Namespace VisualBasicSamples.Account.Forms
     Partial Public Class AccountList
@@ -41,9 +41,9 @@ Namespace VisualBasicSamples.Account.Forms
         Public Sub New()
             InitializeComponent()
             Dim searchFields As Dictionary(Of String, String) = New Dictionary(Of String, String)()
-            searchFields.Add("AccountType", "Account Type")
-            searchFields.Add("SubType", "Sub Type")
-            searchFields.Add("AccountLevel", "Level")
+            searchFields.Add("Classification", "Classification")
+            searchFields.Add("Type", "Type")
+            searchFields.Add("Level", "Level")
             cmbFieldSearch.DataSource = searchFields.ToList()
             cmbFieldSearch.DisplayMember = "value"
             cmbFieldSearch.ValueMember = "key"

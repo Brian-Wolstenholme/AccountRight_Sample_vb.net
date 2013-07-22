@@ -136,6 +136,7 @@ Namespace VisualBasicSamples.Common
             req.Headers("Authorization") = "Bearer " + CompanyFileContext.OAuthDetails.AccessToken
             req.Headers("x-myobapi-key") = CompanyFileContext.DevKey
             req.Headers("x-myobapi-cftoken") = encryptCredential
+            req.Headers("x-myobapi-version") = "v2"
             req.Headers(HttpRequestHeader.AcceptEncoding) = "gzip,deflate"
             req.Host = "api.myob.com"
             req.AutomaticDecompression = DecompressionMethods.GZip Or DecompressionMethods.Deflate

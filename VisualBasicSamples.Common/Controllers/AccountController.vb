@@ -21,10 +21,10 @@ Imports System
 Imports System.Globalization
 Imports System.Linq
 Imports VisualBasicSamples.Common
-Imports VisualBasicSamples.Account.Models
+Imports VisualBasicSamples.Common.Models
 Imports System.Collections.Generic
 
-Namespace VisualBasicSamples.Account.Controllers
+Namespace VisualBasicSamples.Common.Controllers
     Public Class AccountController
         Inherits BusinessController(Of AccountModel)
 
@@ -42,8 +42,8 @@ Namespace VisualBasicSamples.Account.Controllers
             Return GetAll()
         End Function
 
-        Public Function Details(id As String, isNew As Boolean) As AccountModel
-            Dim account As AccountModel = GetById(id)
+        Public Function Details(UID As String, isNew As Boolean) As AccountModel
+            Dim account As AccountModel = GetById(UID)
             If account Is Nothing Then
                 Throw New Exception("Record does not exists")
             End If
@@ -54,22 +54,22 @@ Namespace VisualBasicSamples.Account.Controllers
             If account.IsNew Then
                 Post(account)
             Else
-                Put(account, account.Id)
+                Put(account, account.UID)
             End If
         End Sub
 
-        Public Shadows Sub Delete(id As String)
-            MyBase.Delete(id)
+        Public Shadows Sub Delete(UID As String)
+            MyBase.Delete(UID)
         End Sub
 
-        Public Function Search(field As String, _search As String, Optional _orderby As String = "Id", Optional _direction As String = "asc") As IEnumerable(Of AccountModel)
+        Public Function Search(field As String, _search As String, Optional _orderby As String = "DisplayID", Optional _direction As String = "asc") As IEnumerable(Of AccountModel)
             If (String.IsNullOrEmpty(_search) OrElse String.IsNullOrEmpty(field)) Then
-                Return GetAll("Id")
+                Return GetAll(_orderby, _direction)
             End If
             Dim searchCriteria As List(Of SearchCriteria) = New List(Of SearchCriteria)()
 
             If Not String.IsNullOrEmpty(_search) AndAlso Not String.IsNullOrEmpty(field) Then
-                If field = "AccountLevel" Then
+                If field = "Level" Then
                     searchCriteria.Add(New SearchCriteria() With { _
                       .Field = field, _
                       .SearchText = _search, _
@@ -84,15 +84,15 @@ Namespace VisualBasicSamples.Account.Controllers
                     })
                 End If
             End If
-            Return GetAll(searchCriteria, , "Id")
+            Return GetAll(searchCriteria, , _orderby)
         End Function
 
         Private Function GetSearchType(field As String) As Type
             Select Case field
-                Case "AccountType"
+                Case "Classification"
+                    Return GetType(Classifications)
+                Case "Type"
                     Return GetType(AccountTypes)
-                Case "SubType"
-                    Return GetType(SubTypes)
             End Select
             Return GetType(String)
         End Function

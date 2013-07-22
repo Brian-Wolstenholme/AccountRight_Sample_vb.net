@@ -10,15 +10,6 @@ Namespace VisualBasicSamples.Account.Forms
         Private Sub InitializeComponent()
             Me.components = New System.ComponentModel.Container()
             Me.dgvAccountList = New System.Windows.Forms.DataGridView()
-            Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-            Me.AccountNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-            Me.AccountTypeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-            Me.SubTypeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-            Me.ParentAccountIdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-            Me.AccountLevelDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-            Me.IsInactiveDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-            Me.OpeningAccountBalanceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-            Me.CurrentAccountBalanceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
             Me.bindSrcAccount = New System.Windows.Forms.BindingSource(Me.components)
             Me.cmbFieldSearch = New System.Windows.Forms.ComboBox()
             Me.txtSearch = New System.Windows.Forms.TextBox()
@@ -28,6 +19,16 @@ Namespace VisualBasicSamples.Account.Forms
             Me.panel3 = New System.Windows.Forms.Panel()
             Me.lnkSwitchCompany = New System.Windows.Forms.LinkLabel()
             Me.label3 = New System.Windows.Forms.Label()
+            Me.UIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+            Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+            Me.DisplayIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+            Me.ClassificationDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+            Me.TypeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+            Me.NumberDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+            Me.DescriptionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+            Me.IsActiveDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+            Me.OpeningAccountBalanceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+            Me.CurrentAccountBalanceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
             CType(Me.dgvAccountList, System.ComponentModel.ISupportInitialize).BeginInit()
             CType(Me.bindSrcAccount, System.ComponentModel.ISupportInitialize).BeginInit()
             Me.panel3.SuspendLayout()
@@ -43,7 +44,7 @@ Namespace VisualBasicSamples.Account.Forms
             Me.dgvAccountList.AutoGenerateColumns = False
             Me.dgvAccountList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
             Me.dgvAccountList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-            Me.dgvAccountList.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.AccountNameDataGridViewTextBoxColumn, Me.AccountTypeDataGridViewTextBoxColumn, Me.SubTypeDataGridViewTextBoxColumn, Me.ParentAccountIdDataGridViewTextBoxColumn, Me.AccountLevelDataGridViewTextBoxColumn, Me.IsInactiveDataGridViewCheckBoxColumn, Me.OpeningAccountBalanceDataGridViewTextBoxColumn, Me.CurrentAccountBalanceDataGridViewTextBoxColumn})
+            Me.dgvAccountList.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.UIDDataGridViewTextBoxColumn, Me.NameDataGridViewTextBoxColumn, Me.DisplayIDDataGridViewTextBoxColumn, Me.ClassificationDataGridViewTextBoxColumn, Me.TypeDataGridViewTextBoxColumn, Me.NumberDataGridViewTextBoxColumn, Me.DescriptionDataGridViewTextBoxColumn, Me.IsActiveDataGridViewCheckBoxColumn, Me.OpeningAccountBalanceDataGridViewTextBoxColumn, Me.CurrentAccountBalanceDataGridViewTextBoxColumn})
             Me.dgvAccountList.DataSource = Me.bindSrcAccount
             Me.dgvAccountList.Location = New System.Drawing.Point(15, 71)
             Me.dgvAccountList.Name = "dgvAccountList"
@@ -52,72 +53,9 @@ Namespace VisualBasicSamples.Account.Forms
             Me.dgvAccountList.Size = New System.Drawing.Size(983, 369)
             Me.dgvAccountList.TabIndex = 0
             '
-            'IdDataGridViewTextBoxColumn
-            '
-            Me.IdDataGridViewTextBoxColumn.DataPropertyName = "Id"
-            Me.IdDataGridViewTextBoxColumn.HeaderText = "Id"
-            Me.IdDataGridViewTextBoxColumn.Name = "IdDataGridViewTextBoxColumn"
-            Me.IdDataGridViewTextBoxColumn.ReadOnly = True
-            '
-            'AccountNameDataGridViewTextBoxColumn
-            '
-            Me.AccountNameDataGridViewTextBoxColumn.DataPropertyName = "AccountName"
-            Me.AccountNameDataGridViewTextBoxColumn.HeaderText = "AccountName"
-            Me.AccountNameDataGridViewTextBoxColumn.Name = "AccountNameDataGridViewTextBoxColumn"
-            Me.AccountNameDataGridViewTextBoxColumn.ReadOnly = True
-            '
-            'AccountTypeDataGridViewTextBoxColumn
-            '
-            Me.AccountTypeDataGridViewTextBoxColumn.DataPropertyName = "AccountType"
-            Me.AccountTypeDataGridViewTextBoxColumn.HeaderText = "AccountType"
-            Me.AccountTypeDataGridViewTextBoxColumn.Name = "AccountTypeDataGridViewTextBoxColumn"
-            Me.AccountTypeDataGridViewTextBoxColumn.ReadOnly = True
-            '
-            'SubTypeDataGridViewTextBoxColumn
-            '
-            Me.SubTypeDataGridViewTextBoxColumn.DataPropertyName = "SubType"
-            Me.SubTypeDataGridViewTextBoxColumn.HeaderText = "SubType"
-            Me.SubTypeDataGridViewTextBoxColumn.Name = "SubTypeDataGridViewTextBoxColumn"
-            Me.SubTypeDataGridViewTextBoxColumn.ReadOnly = True
-            '
-            'ParentAccountIdDataGridViewTextBoxColumn
-            '
-            Me.ParentAccountIdDataGridViewTextBoxColumn.DataPropertyName = "ParentAccountId"
-            Me.ParentAccountIdDataGridViewTextBoxColumn.HeaderText = "ParentAccountId"
-            Me.ParentAccountIdDataGridViewTextBoxColumn.Name = "ParentAccountIdDataGridViewTextBoxColumn"
-            Me.ParentAccountIdDataGridViewTextBoxColumn.ReadOnly = True
-            '
-            'AccountLevelDataGridViewTextBoxColumn
-            '
-            Me.AccountLevelDataGridViewTextBoxColumn.DataPropertyName = "AccountLevel"
-            Me.AccountLevelDataGridViewTextBoxColumn.HeaderText = "AccountLevel"
-            Me.AccountLevelDataGridViewTextBoxColumn.Name = "AccountLevelDataGridViewTextBoxColumn"
-            Me.AccountLevelDataGridViewTextBoxColumn.ReadOnly = True
-            '
-            'IsInactiveDataGridViewCheckBoxColumn
-            '
-            Me.IsInactiveDataGridViewCheckBoxColumn.DataPropertyName = "IsInactive"
-            Me.IsInactiveDataGridViewCheckBoxColumn.HeaderText = "IsInactive"
-            Me.IsInactiveDataGridViewCheckBoxColumn.Name = "IsInactiveDataGridViewCheckBoxColumn"
-            Me.IsInactiveDataGridViewCheckBoxColumn.ReadOnly = True
-            '
-            'OpeningAccountBalanceDataGridViewTextBoxColumn
-            '
-            Me.OpeningAccountBalanceDataGridViewTextBoxColumn.DataPropertyName = "OpeningAccountBalance"
-            Me.OpeningAccountBalanceDataGridViewTextBoxColumn.HeaderText = "OpeningAccountBalance"
-            Me.OpeningAccountBalanceDataGridViewTextBoxColumn.Name = "OpeningAccountBalanceDataGridViewTextBoxColumn"
-            Me.OpeningAccountBalanceDataGridViewTextBoxColumn.ReadOnly = True
-            '
-            'CurrentAccountBalanceDataGridViewTextBoxColumn
-            '
-            Me.CurrentAccountBalanceDataGridViewTextBoxColumn.DataPropertyName = "CurrentAccountBalance"
-            Me.CurrentAccountBalanceDataGridViewTextBoxColumn.HeaderText = "CurrentAccountBalance"
-            Me.CurrentAccountBalanceDataGridViewTextBoxColumn.Name = "CurrentAccountBalanceDataGridViewTextBoxColumn"
-            Me.CurrentAccountBalanceDataGridViewTextBoxColumn.ReadOnly = True
-            '
             'bindSrcAccount
             '
-            Me.bindSrcAccount.DataSource = GetType(VisualBasicSamples.Account.Models.AccountModel)
+            Me.bindSrcAccount.DataSource = GetType(VisualBasicSamples.Common.Models.AccountModel)
             '
             'cmbFieldSearch
             '
@@ -199,6 +137,76 @@ Namespace VisualBasicSamples.Account.Forms
             Me.label3.TabIndex = 18
             Me.label3.Text = "Accounts"
             '
+            'UIDDataGridViewTextBoxColumn
+            '
+            Me.UIDDataGridViewTextBoxColumn.DataPropertyName = "UID"
+            Me.UIDDataGridViewTextBoxColumn.HeaderText = "UID"
+            Me.UIDDataGridViewTextBoxColumn.Name = "UIDDataGridViewTextBoxColumn"
+            Me.UIDDataGridViewTextBoxColumn.ReadOnly = True
+            '
+            'NameDataGridViewTextBoxColumn
+            '
+            Me.NameDataGridViewTextBoxColumn.DataPropertyName = "Name"
+            Me.NameDataGridViewTextBoxColumn.HeaderText = "Name"
+            Me.NameDataGridViewTextBoxColumn.Name = "NameDataGridViewTextBoxColumn"
+            Me.NameDataGridViewTextBoxColumn.ReadOnly = True
+            '
+            'DisplayIDDataGridViewTextBoxColumn
+            '
+            Me.DisplayIDDataGridViewTextBoxColumn.DataPropertyName = "DisplayID"
+            Me.DisplayIDDataGridViewTextBoxColumn.HeaderText = "DisplayID"
+            Me.DisplayIDDataGridViewTextBoxColumn.Name = "DisplayIDDataGridViewTextBoxColumn"
+            Me.DisplayIDDataGridViewTextBoxColumn.ReadOnly = True
+            '
+            'ClassificationDataGridViewTextBoxColumn
+            '
+            Me.ClassificationDataGridViewTextBoxColumn.DataPropertyName = "Classification"
+            Me.ClassificationDataGridViewTextBoxColumn.HeaderText = "Classification"
+            Me.ClassificationDataGridViewTextBoxColumn.Name = "ClassificationDataGridViewTextBoxColumn"
+            Me.ClassificationDataGridViewTextBoxColumn.ReadOnly = True
+            '
+            'TypeDataGridViewTextBoxColumn
+            '
+            Me.TypeDataGridViewTextBoxColumn.DataPropertyName = "Type"
+            Me.TypeDataGridViewTextBoxColumn.HeaderText = "Type"
+            Me.TypeDataGridViewTextBoxColumn.Name = "TypeDataGridViewTextBoxColumn"
+            Me.TypeDataGridViewTextBoxColumn.ReadOnly = True
+            '
+            'NumberDataGridViewTextBoxColumn
+            '
+            Me.NumberDataGridViewTextBoxColumn.DataPropertyName = "Number"
+            Me.NumberDataGridViewTextBoxColumn.HeaderText = "Number"
+            Me.NumberDataGridViewTextBoxColumn.Name = "NumberDataGridViewTextBoxColumn"
+            Me.NumberDataGridViewTextBoxColumn.ReadOnly = True
+            '
+            'DescriptionDataGridViewTextBoxColumn
+            '
+            Me.DescriptionDataGridViewTextBoxColumn.DataPropertyName = "Description"
+            Me.DescriptionDataGridViewTextBoxColumn.HeaderText = "Description"
+            Me.DescriptionDataGridViewTextBoxColumn.Name = "DescriptionDataGridViewTextBoxColumn"
+            Me.DescriptionDataGridViewTextBoxColumn.ReadOnly = True
+            '
+            'IsActiveDataGridViewCheckBoxColumn
+            '
+            Me.IsActiveDataGridViewCheckBoxColumn.DataPropertyName = "IsActive"
+            Me.IsActiveDataGridViewCheckBoxColumn.HeaderText = "IsActive"
+            Me.IsActiveDataGridViewCheckBoxColumn.Name = "IsActiveDataGridViewCheckBoxColumn"
+            Me.IsActiveDataGridViewCheckBoxColumn.ReadOnly = True
+            '
+            'OpeningAccountBalanceDataGridViewTextBoxColumn
+            '
+            Me.OpeningAccountBalanceDataGridViewTextBoxColumn.DataPropertyName = "OpeningAccountBalance"
+            Me.OpeningAccountBalanceDataGridViewTextBoxColumn.HeaderText = "OpeningAccountBalance"
+            Me.OpeningAccountBalanceDataGridViewTextBoxColumn.Name = "OpeningAccountBalanceDataGridViewTextBoxColumn"
+            Me.OpeningAccountBalanceDataGridViewTextBoxColumn.ReadOnly = True
+            '
+            'CurrentAccountBalanceDataGridViewTextBoxColumn
+            '
+            Me.CurrentAccountBalanceDataGridViewTextBoxColumn.DataPropertyName = "CurrentAccountBalance"
+            Me.CurrentAccountBalanceDataGridViewTextBoxColumn.HeaderText = "CurrentAccountBalance"
+            Me.CurrentAccountBalanceDataGridViewTextBoxColumn.Name = "CurrentAccountBalanceDataGridViewTextBoxColumn"
+            Me.CurrentAccountBalanceDataGridViewTextBoxColumn.ReadOnly = True
+            '
             'AccountList
             '
             Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -232,13 +240,14 @@ Namespace VisualBasicSamples.Account.Forms
         Private lnkSwitchCompany As System.Windows.Forms.LinkLabel
         Private label3 As System.Windows.Forms.Label
         Friend WithEvents bindSrcAccount As System.Windows.Forms.BindingSource
-        Friend WithEvents IdDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-        Friend WithEvents AccountNameDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-        Friend WithEvents AccountTypeDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-        Friend WithEvents SubTypeDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-        Friend WithEvents ParentAccountIdDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-        Friend WithEvents AccountLevelDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-        Friend WithEvents IsInactiveDataGridViewCheckBoxColumn As System.Windows.Forms.DataGridViewCheckBoxColumn
+        Friend WithEvents UIDDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+        Friend WithEvents NameDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+        Friend WithEvents DisplayIDDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+        Friend WithEvents ClassificationDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+        Friend WithEvents TypeDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+        Friend WithEvents NumberDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+        Friend WithEvents DescriptionDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+        Friend WithEvents IsActiveDataGridViewCheckBoxColumn As System.Windows.Forms.DataGridViewCheckBoxColumn
         Friend WithEvents OpeningAccountBalanceDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
         Friend WithEvents CurrentAccountBalanceDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     End Class
