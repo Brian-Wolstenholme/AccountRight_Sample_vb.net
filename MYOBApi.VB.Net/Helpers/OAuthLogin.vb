@@ -17,6 +17,10 @@
 '
 ' Copyright 2013 MYOB Technology Pty Ltd. All rights reserved.
 
+
+''' NOTE:
+''' This file requires .Net framework 4 full profile and a 
+''' reference to System.Web to be added to project
 Imports System.Web
 Imports System.Text.RegularExpressions
 Imports MYOB.AccountRight.SDK
