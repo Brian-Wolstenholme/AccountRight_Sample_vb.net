@@ -751,7 +751,7 @@ Public Class InvoiceForm
                 If Not row.IsNewRow Then
 
                     Dim line = New Version2.Sale.ServiceInvoiceLine
-                    line.Type = "Transaction"
+                    line.Type = Version2.Sale.InvoiceLineType.Transaction
                     line.Description = row.Cells("colDescription").Value
                     line.Total = row.Cells("colAmount").Value
 
