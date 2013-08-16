@@ -1,3 +1,8 @@
+AccountRight_Sample_vb.net
+
+Demonstrates Oauth connecting to Web API
+==========================
+=======
 VB.Net Sample App
 ==========================
 Desktop sample app demonstrating accessing the AccountRight Live API using the SDK in vb.net
@@ -19,4 +24,6 @@ Requirements
 Getting up and running
 -------------------------
 Unzip source code to a local folder and open the solution file. Install the MYOB.AccountRight.API.SDK NuGet package (i.e. type “Install-Package MYOB.AccountRight.API.SDK” in the package manager console), then compile and run. To use the cloud service with the sample change the placeholder Key and Secret in the code with your own.  
+
 The following blog post provides more details about getting started with the sample: VB.Net sample using the new AccountRight API SDK (http://myobapi.tumblr.com/post/58280200848/vb-net-sample-using-the-new-accountright-api-sdk)
+
