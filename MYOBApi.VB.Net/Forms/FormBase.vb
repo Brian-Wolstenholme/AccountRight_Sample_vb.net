@@ -59,11 +59,17 @@ Public Class FormBase
     ''' <remarks></remarks>
     Protected Sub OnError(uri As System.Uri, ex As System.Exception)
 
-        If ex.GetType() Is GetType(System.Net.WebException) Then
-            MessageBox.Show(FormatMessage(CType(ex, System.Net.WebException)))
-        Else
-            MessageBox.Show(ex.Message)
-        End If
+        'Display thr formatted message
+        Select Case ex.GetType()
+            Case GetType(System.Net.WebException)
+                MessageBox.Show(FormatMessage(CType(ex, System.Net.WebException)))
+            Case GetType(MYOB.AccountRight.SDK.ApiCommunicationException)
+                MessageBox.Show(FormatMessage(CType(ex.InnerException, System.Net.WebException)))
+            Case GetType(MYOB.AccountRight.SDK.ApiOperationException)
+                MessageBox.Show(ex.Message)
+            Case Else
+                MessageBox.Show(ex.Message)
+        End Select
 
         HideSpinner()
     End Sub
