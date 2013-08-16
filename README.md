@@ -1,8 +1,3 @@
-AccountRight_Sample_vb.net
-
-Demonstrates Oauth connecting to Web API
-==========================
-=======
 VB.Net Sample App
 ==========================
 Desktop sample app demonstrating accessing the AccountRight Live API using the SDK in vb.net
